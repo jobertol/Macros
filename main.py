@@ -9,6 +9,11 @@ from time import sleep
 
 def logData():
   driver = webdriver.Chrome('./chromedriver')
+  driver.get("https://forms.office.com")
+  driver.find_element_by_class_name("form-group col-md-12 placeholderContainer").send_keys("")
+  driver.find_element_by_class_name("btn btn-block btn-primary").click()
+  driver.find_element_by_id("i0118").send_keys("")
+  driver.find_element_by_id("idSIButton9").click()
   driver.get("https://forms.office.com/Pages/ResponsePage.aspx?id=MhlcNIFE0UypZ7uOyCLuL2gu9sul5k1IiROfNLPyDS5UQk5QRDE0SUZPM1pUM0M1NVZHNFVXMFdZRy4u&qrcode=true")
   dateBox = driver.find_element_by_class_name("office-form-question-textbox form-control border-no-radius datepicker")
   date = now().strftime("%-m/%-d/%Y")
